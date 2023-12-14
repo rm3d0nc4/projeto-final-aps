@@ -52,7 +52,7 @@ namespace projeto_final_aps.Controllers
         public IActionResult Create()
         {
             ViewData["ClienteId"] = new SelectList(_context.Clientes, "Id", "Id");
-            ViewData["TipoDePagamentoId"] = new SelectList(_context.TiposDePagamento, "Id", "Discriminator");
+            ViewData["TipoDePagamentoId"] = new SelectList(_context.TiposDePagamento, "Id", "Id");
             ViewData["TransportadoraId"] = new SelectList(_context.Transportadoras, "Id", "Id");
             ViewData["VendedorId"] = new SelectList(_context.Vendedores, "Id", "Id");
             return View();
@@ -72,7 +72,7 @@ namespace projeto_final_aps.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["ClienteId"] = new SelectList(_context.Clientes, "Id", "Id", notaDeVenda.ClienteId);
-            ViewData["TipoDePagamentoId"] = new SelectList(_context.TiposDePagamento, "Id", "Discriminator", notaDeVenda.TipoDePagamentoId);
+            ViewData["TipoDePagamentoId"] = new SelectList(_context.TiposDePagamento, "Id", "Id", notaDeVenda.TipoDePagamentoId);
             ViewData["TransportadoraId"] = new SelectList(_context.Transportadoras, "Id", "Id", notaDeVenda.TransportadoraId);
             ViewData["VendedorId"] = new SelectList(_context.Vendedores, "Id", "Id", notaDeVenda.VendedorId);
             return View(notaDeVenda);
@@ -92,7 +92,7 @@ namespace projeto_final_aps.Controllers
                 return NotFound();
             }
             ViewData["ClienteId"] = new SelectList(_context.Clientes, "Id", "Id", notaDeVenda.ClienteId);
-            ViewData["TipoDePagamentoId"] = new SelectList(_context.TiposDePagamento, "Id", "Discriminator", notaDeVenda.TipoDePagamentoId);
+            ViewData["TipoDePagamentoId"] = new SelectList(_context.TiposDePagamento, "Id", "Id", notaDeVenda.TipoDePagamentoId);
             ViewData["TransportadoraId"] = new SelectList(_context.Transportadoras, "Id", "Id", notaDeVenda.TransportadoraId);
             ViewData["VendedorId"] = new SelectList(_context.Vendedores, "Id", "Id", notaDeVenda.VendedorId);
             return View(notaDeVenda);
@@ -131,7 +131,7 @@ namespace projeto_final_aps.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["ClienteId"] = new SelectList(_context.Clientes, "Id", "Id", notaDeVenda.ClienteId);
-            ViewData["TipoDePagamentoId"] = new SelectList(_context.TiposDePagamento, "Id", "Discriminator", notaDeVenda.TipoDePagamentoId);
+            ViewData["TipoDePagamentoId"] = new SelectList(_context.TiposDePagamento, "Id", "Id", notaDeVenda.TipoDePagamentoId);
             ViewData["TransportadoraId"] = new SelectList(_context.Transportadoras, "Id", "Id", notaDeVenda.TransportadoraId);
             ViewData["VendedorId"] = new SelectList(_context.Vendedores, "Id", "Id", notaDeVenda.VendedorId);
             return View(notaDeVenda);
