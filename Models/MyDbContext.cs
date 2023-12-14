@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using projeto_final_aps.Models;
 
 namespace projeto_final_aps.Models
 {
@@ -23,6 +24,7 @@ namespace projeto_final_aps.Models
         public DbSet<Produto> Produtos { get; set; } = null!;
         public DbSet<Item> Items { get; set; } = null!;
         public DbSet<NotaDeVenda> NotasDeVendas { get; set; } = null!;
+        public DbSet<Pagamento> Pagamento { get; set; }
 
 
 

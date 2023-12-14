@@ -31,7 +31,33 @@ namespace projeto_final_aps.Models
         [Display(Name = "Tipo de Pagamento"), ForeignKey("TipoDePagamento")]
         public int? TipoDePagamentoId { get; set; }
         public ICollection<Item> Itens { get; set; } = new List<Item>();
+        public ICollection<Pagamento> Pagamentos { get; set; } = new List<Pagamento>();
+
         
+
+        public void Cancelar()
+        {
+            if (this.Tipo == true)
+            {
+                throw new Exception("Nota de Venda já cancelada!");
+            }
+            else
+            {
+                this.Tipo = true;
+            }
+        }
+
+        public void Devolver() 
+        {
+            if (this.Tipo == false)
+            {
+                throw new Exception("Nota de Venda já devolvida!");
+            }
+            else
+            {
+                this.Tipo = false;
+            }
+        }
 
     }
 }
