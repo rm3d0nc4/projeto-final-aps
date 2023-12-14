@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace projeto_final_aps.Models
 {
-    public class TipoDePagamento
+    public abstract class TipoDePagamento
     {
         [Display(Name = "Código"), Key()]
         public int Id { get; set; }

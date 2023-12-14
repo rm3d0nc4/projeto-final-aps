@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using projeto_final_aps.Models;
 
@@ -10,9 +11,10 @@ using projeto_final_aps.Models;
 namespace projeto_final_aps.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    partial class MyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231213003708_ChangedModels1")]
+    partial class ChangedModels1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,6 +43,7 @@ namespace projeto_final_aps.Migrations
                         .HasColumnType("int");
 
                     b.Property<int?>("NotaDeVendaId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<int>("Percentual")
@@ -238,7 +241,9 @@ namespace projeto_final_aps.Migrations
                 {
                     b.HasOne("projeto_final_aps.Models.NotaDeVenda", "NotaDeVenda")
                         .WithMany("Itens")
-                        .HasForeignKey("NotaDeVendaId");
+                        .HasForeignKey("NotaDeVendaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("projeto_final_aps.Models.Produto", "Produto")
                         .WithMany("Itens")

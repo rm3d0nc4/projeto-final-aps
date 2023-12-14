@@ -22,6 +22,8 @@ namespace projeto_final_aps.Models
         public DbSet<Marca> Marcas { get; set; } = null!;
         public DbSet<Produto> Produtos { get; set; } = null!;
         public DbSet<Item> Items { get; set; } = null!;
+        public DbSet<NotaDeVenda> NotasDeVendas { get; set; } = null!;
+
 
 
     }
